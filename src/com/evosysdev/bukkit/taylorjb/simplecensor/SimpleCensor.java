@@ -35,7 +35,6 @@ public class SimpleCensor extends JavaPlugin
         {
             // getStringList doesn't work here because config.set inserts single quotes around it
             censorList = Arrays.asList(config.getString("censor.words").split(",")); // >=(
-            System.err.println(censorList.toString());
             censorChar = config.getString("censor.char").charAt(0);
         }
         catch (NullPointerException npe)
