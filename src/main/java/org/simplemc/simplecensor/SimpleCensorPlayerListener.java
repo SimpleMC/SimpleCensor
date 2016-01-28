@@ -1,4 +1,4 @@
-package com.evosysdev.bukkit.taylorjb.simplecensor;
+package org.simplemc.simplecensor;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;

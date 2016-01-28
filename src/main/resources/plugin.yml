@@ -1,5 +1,5 @@
 name: SimpleCensor
-main: com.evosysdev.bukkit.taylorjb.simplecensor.SimpleCensor
-version: 0.3.0_1
+main: org.simplemc.simplecensor.SimpleCensor
+version: 0.3.0_2
 website: http://dev.bukkit.org/server-mods/simple-censor/
 author: taylorjb
