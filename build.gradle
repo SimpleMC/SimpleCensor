@@ -1,0 +1,56 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+}
+
+plugins {
+    id 'java'
+    id 'maven'
+    id 'com.github.johnrengelman.shadow' version '1.2.2'
+    id 'eclipse'
+}
+
+group 'org.simplemc'
+version '0.3.0_2-SNAPSHOT'
+
+repositories {
+    // Maven local - Lets us test local changes to shared libs before deploying
+    mavenLocal()
+
+    // Maven Central - Contains thousands of maven projects for various dependencies
+    mavenCentral()
+
+    // Sonatype Repo Repo - Our Dependencies: Spigot-API
+    maven {
+        url "https://oss.sonatype.org/content/repositories/snapshots"
+    }
+
+    // MD_5 Repo - Our Dependencies: Spigot-API
+    maven {
+        url "http://repo.md-5.net/content/groups/public/"
+    }
+
+    // Spigot Repo - Our Dependencies: Spigot-API
+    maven {
+        url "https://hub.spigotmc.org/nexus/content/groups/public/"
+    }
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+shadowJar {
+    baseName = 'simplecensor-all'
+    classifier = ''
+    dependencies {
+        exclude(dependency('org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT'))
+    }
+}
+
+dependencies {
+    compile 'org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT'
+}
+
+build.dependsOn(shadowJar)

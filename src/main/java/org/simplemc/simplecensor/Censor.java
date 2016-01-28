@@ -1,4 +1,4 @@
-package com.evosysdev.bukkit.taylorjb.simplecensor;
+package org.simplemc.simplecensor;
 
 import java.util.Arrays;
 import java.util.HashMap;
